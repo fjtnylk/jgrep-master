@@ -32,10 +32,7 @@ public class Launch {
     Channel channel = grep.grep(kw, path);
 
     for (int i = 2; i < args.length; i++) {
-      String arg = args[i];
-      if ("|".equals(arg)) {
-        channel.grep(args[i + 1]);
-      }
+      channel.grep(args[i]);
     }
 
     System.out.println(channel.getResult().tString());
